@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
 
 public class Game {
     private int size = Constants.DEFAULT_SIZE;
-    private Board board;
+    private static Board board;
     private GUI theView;
     private boolean interactive = true;
 
@@ -56,7 +56,7 @@ public class Game {
      * Returns the board associated with this game.
      */
 
-    public Board getBoard() {
+    public static Board getBoard() {
         return board;
     }
 

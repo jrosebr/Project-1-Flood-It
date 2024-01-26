@@ -11,7 +11,12 @@ public class Flood {
                               LinkedList<Coord> flooded_list,
                               Tile[][] tiles,
                               Integer board_size) {
-        // YOUR CODE
+        int s = 0;
+        for (int i = 0; i < flooded_list.size(); ++i)
+        {
+            System.out.println(s);
+            ++s;
+        }
     }
 
     // An alternative implementation goes here.
