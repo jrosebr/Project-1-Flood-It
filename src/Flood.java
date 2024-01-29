@@ -16,13 +16,13 @@ public class Flood {
         {
             List<Coord> neighbors = flooded_list.get(i).neighbors(board_size);
 
-            for (int j = 0; j < neighbors.size(); ++j)
+            for (Coord tile : neighbors)
             {
-                if (!flooded_list.contains(neighbors.get(j)))
+                if (!flooded_list.contains(tile))
                 {
-                    if (Board.get(neighbors.get(j)).getColor().equals(color))
+                    if (Board.get(tile).getColor().equals(color))
                     {
-                        flooded_list.add(neighbors.get(j));
+                        flooded_list.add(tile);
                     }
                 }
             }
@@ -34,7 +34,7 @@ public class Flood {
                              LinkedList<Coord> flooded_list,
                              Tile[][] tiles,
                              Integer board_size) {
-        // YOUR CODE
+        // Hashmaps instead of contains()!!!
     }
 
 }
