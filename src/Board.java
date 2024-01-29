@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 
 public class Board {
     LinkedList<Coord> flooded;
-    Tile[][] tiles;
+    static Tile[][] tiles;
     int size;
 
     /**
@@ -80,7 +80,7 @@ public class Board {
     /**
      * Returns the tile at the specified coordinate.
      */
-    public Tile get(Coord coord) {
+    public static Tile get(Coord coord) {
         return tiles[coord.getY()][coord.getX()];
     }
 

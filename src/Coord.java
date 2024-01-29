@@ -17,7 +17,8 @@ public class Coord implements Comparable<Coord> {
    */
   public static Coord ORIGIN = new Coord(0, 0);
 
-  private int x, y;
+  private static int x;
+  private static int y;
 
   /**
    * Constructs a new Coord that is a copy of the given Coord.
@@ -37,14 +38,14 @@ public class Coord implements Comparable<Coord> {
   /**
    * Returns the Coord that is directly above (i.e., north of) this one.
    */
-  public Coord up() {
+  public static Coord up() {
     return new Coord(x, y - 1);
   }
 
   /**
    * Returns the Coord that is directly below (i.e., south of) this one.
    */
-  public Coord down() {
+  public static Coord down() {
     return new Coord(x, y + 1);
   }
 
@@ -52,7 +53,7 @@ public class Coord implements Comparable<Coord> {
    * Returns the Coord that is immediately to the left (i.e., west)
    * of this one.
    */
-  public Coord left() {
+  public static Coord left() {
     return new Coord(x - 1, y);
   }
 
@@ -60,7 +61,7 @@ public class Coord implements Comparable<Coord> {
    * Returns the Coord that is immediately to the right (i.e., east)
    * of this one.
    */
-  public Coord right() {
+  public static Coord right() {
     return new Coord(x + 1, y);
   }
 
@@ -80,7 +81,7 @@ public class Coord implements Comparable<Coord> {
    * Returns a list of the immediate board coordinates of this Coord's north,
    * south, east, and west neighbors.
    */
-  public List<Coord> neighbors(int size) {
+  public static List<Coord> neighbors(int size) {
     // TODO
     // return null;
 
