@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 public class Board {
     LinkedList<Coord> flooded;
     static Tile[][] tiles;
-    int size;
+    static int size;
 
     /**
      * Constructs a square game board of the given size, initializes the list of
@@ -87,7 +87,7 @@ public class Board {
     /**
      * Returns the size of this board.
      */
-    public int getSize() {
+    public static int getSize() {
         return size;
     }
 
