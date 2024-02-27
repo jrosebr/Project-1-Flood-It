@@ -163,7 +163,7 @@ public class Game {
     private void batchTest() {
         List<List<Double>> allTimings = new LinkedList<>();
         List<Integer> numTiles = new LinkedList<>();
-        for (int k = 0; k != 1; ++k) {
+        for (int k = 0; k != 2; ++k) {
             String name = "flood" + (k == 0 ? "" : k);
             System.out.println("running with " + name + " as the flood function");
             List<Double> timings = new LinkedList<>();

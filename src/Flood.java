@@ -2,7 +2,6 @@
 
 import java.util.*;
 
-
 public class Flood {
 
     // Students implement this flood function.
@@ -18,7 +17,7 @@ public class Flood {
             {
                 if (!flooded_list.contains(tile))
                 {
-                    if (Board.get(tile).getColor().equals(color))
+                    if (tiles[tile.getY()][tile.getX()].getColor().equals(color))
                     {
                         flooded_list.add(tile);
                     }
@@ -33,7 +32,37 @@ public class Flood {
                              LinkedList<Coord> flooded_list,
                              Tile[][] tiles,
                              Integer board_size) {
-        // Hashmaps instead of contains()!!!
+
+        //List of Visited Coordinates
+        boolean[][] visited = new boolean[board_size][board_size];
+
+        //Queue of newly added tiles
+        Queue<Coord> queue = new LinkedList<>();
+
+        for (Coord coord : flooded_list)
+        {
+            queue.offer(coord);
+            visited[coord.getX()][coord.getY()] = true;
+        }
+
+        while (!queue.isEmpty())
+        {
+            Coord current = queue.poll();
+            List<Coord> neighbors = current.neighbors(board_size);
+
+            for (Coord neighbor : neighbors)
+            {
+                int x = neighbor.getX();
+                int y = neighbor.getY();
+
+                if (!visited[x][y] && tiles[x][y].getColor().equals(color))
+                {
+                    flooded_list.add(neighbor);
+                    queue.offer(neighbor);
+                    visited[x][y] = true;
+                }
+            }
+        }
     }
 
 }

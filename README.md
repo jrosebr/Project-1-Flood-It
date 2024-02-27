@@ -25,4 +25,7 @@ The time complexity is not the best it can be. The loop will have to recheck the
 Instead of looping through every single value in the list, I'll try to make it so the function will loop through the newly added coordinates.
 Maybe by using HashMaps or creating a list of the new coordinates after they've been added, and only checking those coordinates.
 
+Question 5:
+I think the time complexity of my flood1 function is O(n).
+
 Revision: Fall 2023
